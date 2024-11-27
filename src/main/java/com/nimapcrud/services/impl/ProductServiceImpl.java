@@ -57,7 +57,7 @@ public class ProductServiceImpl implements ProductService {
 				.orElseThrow(()-> new RuntimeException("product for Given ID is not found"));
 		updatingProduct.setName(product.getName());
 		updatingProduct.setPrice(product.getPrice());
-		Category updateCategory=categoryRepo.findById(product.getCategory().getId())
+		Category updateCategory=categoryRepo.findById(product.getCategory().getCategory_id())
 				.orElseThrow(()-> new RuntimeException("category not found"));
 		updatingProduct.setCategory(updateCategory);
 		
